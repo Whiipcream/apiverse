@@ -2,18 +2,15 @@ const apiContainer = document.getElementById('api-container');
 
 // Load APIs from local JSON file
 fetch('apis.json')
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(data => {
-    // Group APIs by category
-    const categories = {};
-    data.entries.forEach(api => {
-      if (!categories[api.Category]) {
-        categories[api.Category] = [];
-      }
-      categories[api.Category].push(api);
-    });
+    const categories = data.categories; // your JSON's root key
 
-    // Build HTML for each category and its APIs
     for (const category in categories) {
       const section = document.createElement('section');
       const heading = document.createElement('h2');
@@ -24,9 +21,10 @@ fetch('apis.json')
         const apiDiv = document.createElement('div');
         apiDiv.classList.add('api-item');
         apiDiv.innerHTML = `
-          <h3>${api.API}</h3>
-          <p>${api.Description}</p>
-          <a href="${api.Link}" target="_blank" rel="noopener noreferrer">API Docs</a>
+          <h3>${api.name}</h3>
+          <p>${api.description}</p>
+          <p><strong>Auth:</strong> ${api.auth}</p>
+          <a href="${api.url}" target="_blank" rel="noopener noreferrer">API Docs</a>
         `;
         section.appendChild(apiDiv);
       });
