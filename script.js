@@ -6,19 +6,16 @@ fetch("apis.json")
 
     for (const [category, apis] of Object.entries(categories)) {
       const section = document.createElement("div");
-      section.className = "category";
+      section.className = "category collapsed"; // 👈 collapsed by default
 
       const title = document.createElement("h2");
-      title.className = "category-title";
-      title.textContent = `▸ ${category}`;
+      title.textContent = category;
+      title.addEventListener("click", () => {
+        section.classList.toggle("collapsed");
+      });
 
       const list = document.createElement("div");
-      list.className = "api-list hidden"; // hidden by default
-
-      title.addEventListener("click", () => {
-        const isHidden = list.classList.toggle("hidden");
-        title.textContent = `${isHidden ? "▸" : "▾"} ${category}`;
-      });
+      list.className = "api-list";
 
       apis.forEach((api) => {
         const item = document.createElement("div");
