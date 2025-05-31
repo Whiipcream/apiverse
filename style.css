@@ -86,6 +86,7 @@ main {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
 }
 
 .category h2 {
@@ -96,16 +97,34 @@ main {
   cursor: pointer;
   user-select: none;
   font-size: 1.25em;
+  position: relative;
 }
 
+/* Dropdown arrow */
+.category h2::after {
+  content: "▾";
+  position: absolute;
+  right: 1em;
+  transition: transform 0.3s ease;
+}
+
+.category.collapsed h2::after {
+  transform: rotate(-90deg);
+}
+
+/* API list display with transition */
 .api-list {
   padding: 0.5em 1em;
-  display: block;
   background: #fff;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.api-list.hidden {
-  display: none;
+.category.collapsed .api-list {
+  max-height: 0;
+  padding: 0 1em;
+  overflow: hidden;
 }
 
 .api {
