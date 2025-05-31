@@ -23,8 +23,25 @@ function displayAPIs(apiArray) {
     card.innerHTML = `
       <h3>${api.name}</h3>
       <p>${api.description}</p>
-      <a href="${api.url}" target="_blank">Visit API</a>
+      <button class="run-btn">▶️ Run API</button>
+      <pre class="output">Click "Run API" to see results.</pre>
     `;
+
+    const runBtn = card.querySelector('.run-btn');
+    const output = card.querySelector('.output');
+
+    runBtn.addEventListener('click', () => {
+      output.textContent = 'Loading...';
+      fetch(api.url)
+        .then(res => res.json())
+        .then(data => {
+          output.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(err => {
+          output.textContent = 'Error: ' + err.message;
+        });
+    });
+
     apiList.appendChild(card);
   });
 }
