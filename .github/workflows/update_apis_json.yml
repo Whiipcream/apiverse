@@ -1,0 +1,68 @@
+name: Update APIs JSON
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  update-apis-json:
+    if: contains(github.event.issue.labels.*.name, 'api-submission')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Extract API Submission Details
+        id: extract
+        run: |
+          echo "Parsing issue body..."
+          echo "${{ github.event.issue.body }}" > issue_body.md
+          NAME=$(grep -A1 '### API Name' issue_body.md | tail -n1 | xargs)
+          URL=$(grep -A1 '### API URL' issue_body.md | tail -n1 | xargs)
+          DESCRIPTION=$(grep -A1 '### Description' issue_body.md | tail -n1 | xargs)
+          AUTH=$(grep -A1 '### Authentication' issue_body.md | tail -n1 | xargs)
+          CATEGORY=$(grep -A1 '### Category' issue_body.md | tail -n1 | xargs)
+          echo "name=$NAME" >> $GITHUB_OUTPUT
+          echo "url=$URL" >> $GITHUB_OUTPUT
+          echo "description=$DESCRIPTION" >> $GITHUB_OUTPUT
+          echo "auth=$AUTH" >> $GITHUB_OUTPUT
+          echo "category=$CATEGORY" >> $GITHUB_OUTPUT
+
+      - name: Update apis.json
+        run: |
+          echo "Updating apis.json..."
+          CATEGORY="${{ steps.extract.outputs.category }}"
+          NAME="${{ steps.extract.outputs.name }}"
+          URL="${{ steps.extract.outputs.url }}"
+          DESCRIPTION="${{ steps.extract.outputs.description }}"
+          AUTH="${{ steps.extract.outputs.auth }}"
+
+          # Read existing apis.json
+          if [ -f apis.json ]; then
+            cat apis.json > apis_temp.json
+          else
+            echo '{"categories":{}}' > apis_temp.json
+          fi
+
+          # Use jq to update the JSON
+          jq --arg cat "$CATEGORY" \
+             --arg name "$NAME" \
+             --arg url "$URL" \
+             --arg desc "$DESCRIPTION" \
+             --arg auth "$AUTH" \
+             '
+             .categories[$cat] += [{"name": $name, "url": $url, "description": $desc, "auth": $auth}]
+             ' apis_temp.json > apis.json
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add apis.json
+          git commit -m "Add new API: ${{ steps.extract.outputs.name }}"
+          git push
