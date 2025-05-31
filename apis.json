@@ -1,0 +1,186 @@
+{
+  "categories": {
+    "Animals": [
+      {
+        "name": "Cat Facts",
+        "description": "Daily cat facts.",
+        "url": "https://catfact.ninja",
+        "auth": "No"
+      },
+      {
+        "name": "Dog CEO",
+        "description": "Dog pictures and breeds.",
+        "url": "https://dog.ceo/dog-api/",
+        "auth": "No"
+      },
+      {
+        "name": "Zoo Animal Facts",
+        "description": "Facts about zoo animals.",
+        "url": "https://zoo-animal-api.vercel.app",
+        "auth": "No"
+      }
+    ],
+    "Fun & Games": [
+      {
+        "name": "JokeAPI",
+        "description": "Get jokes of various categories.",
+        "url": "https://v2.jokeapi.dev",
+        "auth": "No"
+      },
+      {
+        "name": "BoredAPI",
+        "description": "Random activities to do when bored.",
+        "url": "https://www.boredapi.com/api/activity",
+        "auth": "No"
+      },
+      {
+        "name": "Deck of Cards",
+        "description": "Card game API with shuffle/draw features.",
+        "url": "https://deckofcardsapi.com",
+        "auth": "No"
+      }
+    ],
+    "Weather & Climate": [
+      {
+        "name": "Open-Meteo",
+        "description": "Weather forecasts and climate models.",
+        "url": "https://open-meteo.com",
+        "auth": "No"
+      },
+      {
+        "name": "WeatherAPI",
+        "description": "Weather forecast and historical data.",
+        "url": "https://www.weatherapi.com",
+        "auth": "API Key"
+      },
+      {
+        "name": "MetaWeather",
+        "description": "Weather by location.",
+        "url": "https://www.metaweather.com/api/",
+        "auth": "No"
+      }
+    ],
+    "Space & Science": [
+      {
+        "name": "NASA Open APIs",
+        "description": "Astronomy pictures, Mars Rover, and more.",
+        "url": "https://api.nasa.gov",
+        "auth": "API Key"
+      },
+      {
+        "name": "Open Notify",
+        "description": "ISS current location and astronauts in space.",
+        "url": "http://open-notify.org/Open-Notify-API/",
+        "auth": "No"
+      },
+      {
+        "name": "SpaceX",
+        "description": "Launch data and SpaceX info.",
+        "url": "https://github.com/r-spacex/SpaceX-API",
+        "auth": "No"
+      }
+    ],
+    "Finance & Crypto": [
+      {
+        "name": "CoinGecko",
+        "description": "Cryptocurrency prices and data.",
+        "url": "https://www.coingecko.com/en/api",
+        "auth": "No"
+      },
+      {
+        "name": "ExchangeRate API",
+        "description": "Currency exchange rates.",
+        "url": "https://exchangerate.host",
+        "auth": "No"
+      },
+      {
+        "name": "Financial Modeling Prep",
+        "description": "Stock, ETF, and crypto data.",
+        "url": "https://site.financialmodelingprep.com/developer/docs/",
+        "auth": "API Key"
+      }
+    ],
+    "Text & Language": [
+      {
+        "name": "Fun Translations",
+        "description": "Translate English into Yoda, Pirate, and more.",
+        "url": "https://funtranslations.com/api",
+        "auth": "Limited Free"
+      },
+      {
+        "name": "Languagelayer",
+        "description": "Language detection.",
+        "url": "https://languagelayer.com/",
+        "auth": "API Key"
+      }
+    ],
+    "Health & Wellness": [
+      {
+        "name": "Open Food Facts",
+        "description": "Food product data.",
+        "url": "https://world.openfoodfacts.org/data",
+        "auth": "No"
+      },
+      {
+        "name": "Nutritionix",
+        "description": "Nutrition data API.",
+        "url": "https://developer.nutritionix.com",
+        "auth": "API Key"
+      }
+    ],
+    "Utilities & Tools": [
+      {
+        "name": "IPify",
+        "description": "Get public IP address.",
+        "url": "https://www.ipify.org",
+        "auth": "No"
+      },
+      {
+        "name": "QR Code Generator",
+        "description": "Generate QR codes from text/URLs.",
+        "url": "https://goqr.me/api/",
+        "auth": "No"
+      },
+      {
+        "name": "Numbers API",
+        "description": "Trivia and facts about numbers.",
+        "url": "http://numbersapi.com/",
+        "auth": "No"
+      }
+    ],
+    "Media & Images": [
+      {
+        "name": "Picsum Photos",
+        "description": "Random placeholder images.",
+        "url": "https://picsum.photos/",
+        "auth": "No"
+      },
+      {
+        "name": "Unsplash",
+        "description": "High-quality stock photos.",
+        "url": "https://unsplash.com/developers",
+        "auth": "API Key"
+      },
+      {
+        "name": "Pexels",
+        "description": "Free stock photos and videos.",
+        "url": "https://www.pexels.com/api/",
+        "auth": "API Key"
+      }
+    ],
+    "News & Media": [
+      {
+        "name": "GNews",
+        "description": "News articles from Google News.",
+        "url": "https://gnews.io/",
+        "auth": "API Key"
+      },
+      {
+        "name": "Mediastack",
+        "description": "Real-time news from various sources.",
+        "url": "https://mediastack.com/",
+        "auth": "API Key"
+      }
+    ]
+  }
+}
