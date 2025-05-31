@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>APIverse Explorer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,12 +10,14 @@
   <header>
     <h1>🌐 APIverse Explorer</h1>
     <p>Discover and use powerful public APIs</p>
+
+    <!-- Submit toggle button -->
+    <button id="toggle-form-btn" class="btn-primary">➕ Submit an API</button>
   </header>
 
-  <main id="api-container"></main>
-
-  <section class="submission-section">
-    <h2>➕ Submit an API</h2>
+  <!-- The submit form is hidden by default -->
+  <section class="submission-section" id="submission-section" style="display:none;">
+    <h2>Submit an API</h2>
     <form id="api-form">
       <input type="text" id="name" placeholder="API Name" required />
       <input type="url" id="url" placeholder="API URL" required />
@@ -26,6 +28,8 @@
     </form>
     <p id="form-message"></p>
   </section>
+
+  <main id="api-container"></main>
 
   <footer>
     <p>Free. Open Source. Built on GitHub.</p>
