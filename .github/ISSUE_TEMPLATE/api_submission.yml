@@ -1,0 +1,40 @@
+name: API Submission
+description: Submit a new API to be added to the directory.
+title: "New API Submission: [API Name]"
+labels: [api-submission]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: API Name
+      description: The name of the API.
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: API URL
+      description: The URL endpoint of the API.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A brief description of the API.
+    validations:
+      required: true
+  - type: input
+    id: auth
+    attributes:
+      label: Authentication
+      description: Type of authentication required (e.g., No, API Key).
+    validations:
+      required: true
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      description: The category under which this API falls (e.g., Animals).
+    validations:
+      required: true
