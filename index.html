@@ -18,6 +18,24 @@
     <p>Free. Open Source. Built on GitHub.</p>
   </footer>
 
+  <!-- Firebase Setup -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDQtrl8316XSV4iWROLMOE3rCMNlN8co8o",
+      authDomain: "apiverse-67eb1.firebaseapp.com",
+      projectId: "apiverse-67eb1",
+      storageBucket: "apiverse-67eb1.firebasestorage.app",
+      messagingSenderId: "703964190155",
+      appId: "1:703964190155:web:8acf1d4668aa80b0c4124e"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    console.log("✅ Firebase initialized");
+  </script>
+
+  <!-- Main Script -->
   <script src="script.js"></script>
 </body>
 </html>
