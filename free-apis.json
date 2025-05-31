@@ -1,102 +1,136 @@
-[
-  {
-    "name": "Cat Facts",
-    "url": "https://catfact.ninja/fact",
-    "description": "Returns a random cat fact"
-  },
-  {
-    "name": "JokeAPI",
-    "url": "https://v2.jokeapi.dev/joke/Any?type=single",
-    "description": "Returns a random joke"
-  },
-  {
-    "name": "Kanye West Quotes",
-    "url": "https://api.kanye.rest",
-    "description": "Returns a random Kanye West quote"
-  },
-  {
-    "name": "Advice Slip",
-    "url": "https://api.adviceslip.com/advice",
-    "description": "Get a random piece of life advice"
-  },
-  {
-    "name": "Bored API",
-    "url": "https://www.boredapi.com/api/activity",
-    "description": "Suggests something to do when you're bored"
-  },
-  {
-    "name": "Chuck Norris Jokes",
-    "url": "https://api.chucknorris.io/jokes/random",
-    "description": "Returns a random Chuck Norris joke"
-  },
-  {
-    "name": "Bitcoin Price",
-    "url": "https://api.coindesk.com/v1/bpi/currentprice.json",
-    "description": "Get real-time Bitcoin price from CoinDesk"
-  },
-  {
-    "name": "SpaceX Latest Launch",
-    "url": "https://api.spacexdata.com/v5/launches/latest",
-    "description": "Info about the latest SpaceX launch"
-  },
-  {
-    "name": "Random Dog Image",
-    "url": "https://dog.ceo/api/breeds/image/random",
-    "description": "Returns a random dog image"
-  },
-  {
-    "name": "Random Useless Facts",
-    "url": "https://uselessfacts.jsph.pl/random.json?language=en",
-    "description": "Returns a random useless fact"
-  },
-  {
-    "name": "ISS Current Location",
-    "url": "http://api.open-notify.org/iss-now.json",
-    "description": "Returns the current location of the ISS"
-  },
-  {
-    "name": "Anime Quote",
-    "url": "https://animechan.xyz/api/random",
-    "description": "Returns a random anime quote"
-  },
-  {
-    "name": "Number Facts",
-    "url": "http://numbersapi.com/random/trivia?json",
-    "description": "Returns a random number fact"
-  },
-  {
-    "name": "Age Prediction",
-    "url": "https://api.agify.io?name=michael",
-    "description": "Predicts age based on name"
-  },
-  {
-    "name": "Gender Prediction",
-    "url": "https://api.genderize.io?name=lucy",
-    "description": "Predicts gender from name"
-  },
-  {
-    "name": "Nationality Prediction",
-    "url": "https://api.nationalize.io?name=john",
-    "description": "Predicts nationality from name"
-  },
-  {
-    "name": "Dad Joke",
-    "url": "https://icanhazdadjoke.com/slack",
-    "description": "Returns a dad joke (Slack format)"
-  },
-  {
-    "name": "Yes/No API",
-    "url": "https://yesno.wtf/api",
-    "description": "Returns yes, no, or maybe with a gif"
-  },
-  {
-    "name": "Weather (Sample City)",
-    "url": "https://goweather.herokuapp.com/weather/London",
-    "description": "Simple weather data for London"
-  },
-  {
-    "name": "Trump Quotes",
-    "url": "https://api.tronalddump.io/random/quote",
-    "description": "Random Trump quote"
+{
+  "categories": {
+    "Animals": [
+      {
+        "name": "Cat Facts",
+        "url": "https://catfact.ninja/fact",
+        "description": "Random cat facts",
+        "auth": "No"
+      },
+      {
+        "name": "Dog CEO",
+        "url": "https://dog.ceo/api/breeds/image/random",
+        "description": "Random dog images",
+        "auth": "No"
+      }
+    ],
+    "Games & Fun": [
+      {
+        "name": "JokeAPI",
+        "url": "https://v2.jokeapi.dev/joke/Any",
+        "description": "Programming/general jokes",
+        "auth": "No"
+      },
+      {
+        "name": "Deck of Cards",
+        "url": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
+        "description": "Simulate a deck of cards",
+        "auth": "No"
+      }
+    ],
+    "Crypto & Finance": [
+      {
+        "name": "CoinGecko",
+        "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
+        "description": "Crypto market prices",
+        "auth": "No"
+      },
+      {
+        "name": "ExchangeRate API",
+        "url": "https://open.er-api.com/v6/latest/USD",
+        "description": "Currency exchange rates",
+        "auth": "No"
+      }
+    ],
+    "Space & Science": [
+      {
+        "name": "NASA APOD",
+        "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
+        "description": "Astronomy Picture of the Day",
+        "auth": "Free Key"
+      },
+      {
+        "name": "Open Notify",
+        "url": "http://api.open-notify.org/iss-now.json",
+        "description": "ISS Current Location",
+        "auth": "No"
+      }
+    ],
+    "News & Info": [
+      {
+        "name": "Mediastack",
+        "url": "http://api.mediastack.com/v1/news?access_key=demo",
+        "description": "News headlines",
+        "auth": "Free Key"
+      }
+    ],
+    "Weather": [
+      {
+        "name": "WeatherAPI",
+        "url": "http://api.weatherapi.com/v1/current.json?key=demo&q=London",
+        "description": "Weather data",
+        "auth": "Free Key"
+      },
+      {
+        "name": "Open-Meteo",
+        "url": "https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&hourly=temperature_2m",
+        "description": "Free weather forecast",
+        "auth": "No"
+      }
+    ],
+    "AI & Tools": [
+      {
+        "name": "Fun Translations",
+        "url": "https://api.funtranslations.com/translate/yoda.json?text=Master+Yoda+I+am",
+        "description": "Yoda-speak and more",
+        "auth": "Free Key"
+      },
+      {
+        "name": "Agify.io",
+        "url": "https://api.agify.io?name=michael",
+        "description": "Predict age by name",
+        "auth": "No"
+      },
+      {
+        "name": "Genderize.io",
+        "url": "https://api.genderize.io?name=luc",
+        "description": "Predict gender by name",
+        "auth": "No"
+      },
+      {
+        "name": "Nationalize.io",
+        "url": "https://api.nationalize.io?name=nathaniel",
+        "description": "Predict nationality by name",
+        "auth": "No"
+      }
+    ],
+    "Text & Data": [
+      {
+        "name": "Numbers API",
+        "url": "http://numbersapi.com/random/trivia",
+        "description": "Random number trivia",
+        "auth": "No"
+      },
+      {
+        "name": "Quotes REST",
+        "url": "https://api.quotable.io/random",
+        "description": "Inspirational quotes",
+        "auth": "No"
+      }
+    ],
+    "Food & Recipes": [
+      {
+        "name": "TheMealDB",
+        "url": "https://www.themealdb.com/api/json/v1/1/random.php",
+        "description": "Random meal recipes",
+        "auth": "No"
+      },
+      {
+        "name": "Cocktail DB",
+        "url": "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+        "description": "Random cocktail recipes",
+        "auth": "No"
+      }
+    ]
   }
-]
+}
