@@ -1,43 +1,73 @@
-const apiContainer = document.getElementById('api-container');
+const apiUrl = 'https://api.publicapis.io/entries';
 
-fetch('https://raw.githubusercontent.com/Kiara22/public-apis-json/main/public_apis.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Network response was not OK');
+async function fetchAndDisplayAPIs() {
+  const container = document.getElementById('api-container');
+  container.innerHTML = '<p>Loading APIs...</p>';
+
+  try {
+    const response = await fetch(apiUrl);
+    if (!response.ok) throw new Error('Failed to fetch APIs');
+
+    const data = await response.json();
+    const apis = data.entries;
+
+    // Group APIs by category
+    const grouped = apis.reduce((acc, api) => {
+      const category = api.Category || 'Others';
+      if (!acc[category]) acc[category] = [];
+      acc[category].push(api);
+      return acc;
+    }, {});
+
+    // Clear container
+    container.innerHTML = '';
+
+    // Build UI grouped by category
+    for (const [category, apiList] of Object.entries(grouped)) {
+      const catSection = document.createElement('section');
+      catSection.classList.add('category-section');
+
+      const catHeader = document.createElement('h2');
+      catHeader.textContent = category;
+      catSection.appendChild(catHeader);
+
+      const list = document.createElement('ul');
+      list.classList.add('api-list');
+
+      apiList.forEach(api => {
+        const item = document.createElement('li');
+        item.classList.add('api-item');
+
+        // API name with link
+        const link = document.createElement('a');
+        link.href = api.Link;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = api.API;
+
+        // Description text
+        const desc = document.createElement('p');
+        desc.textContent = api.Description;
+
+        // Show Auth, HTTPS, Cors info inline
+        const info = document.createElement('small');
+        info.textContent = `Auth: ${api.Auth || 'None'} | HTTPS: ${api.HTTPS} | Cors: ${api.Cors}`;
+
+        item.appendChild(link);
+        item.appendChild(desc);
+        item.appendChild(info);
+
+        list.appendChild(item);
+      });
+
+      catSection.appendChild(list);
+      container.appendChild(catSection);
     }
-    return response.json();
-  })
-  .then(data => {
-    displayApis(data);
-  })
-  .catch(error => {
-    console.error('Failed to load APIs:', error);
-    apiContainer.innerHTML = `<p style="color:red;">Failed to load APIs: ${error.message}</p>`;
-  });
 
-function displayApis(data) {
-  apiContainer.innerHTML = '';
-
-  for (const category in data) {
-    const catSection = document.createElement('section');
-    catSection.className = 'category';
-
-    const catTitle = document.createElement('h2');
-    catTitle.textContent = category;
-    catSection.appendChild(catTitle);
-
-    const ul = document.createElement('ul');
-
-    data[category].forEach(api => {
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <strong>${api.API}</strong> — ${api.Description}<br />
-        <a href="${api.Link}" target="_blank" rel="noopener noreferrer">Documentation</a>
-      `;
-      ul.appendChild(li);
-    });
-
-    catSection.appendChild(ul);
-    apiContainer.appendChild(catSection);
+  } catch (error) {
+    container.innerHTML = `<p style="color:red;">Failed to load APIs: ${error.message}</p>`;
   }
 }
+
+// Run on page load
+window.addEventListener('DOMContentLoaded', fetchAndDisplayAPIs);
