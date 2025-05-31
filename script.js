@@ -1,58 +1,43 @@
-fetch('https://thingproxy.freeboard.io/fetch/https://raw.githubusercontent.com/public-apis/public-apis/master/entries.json')
+const apiContainer = document.getElementById('api-container');
+
+fetch('https://raw.githubusercontent.com/Kiara22/public-apis-json/main/public_apis.json')
   .then(response => {
-    if (!response.ok) throw new Error('Network response was not ok');
+    if (!response.ok) {
+      throw new Error('Network response was not OK');
+    }
     return response.json();
   })
   .then(data => {
-    // The API response is wrapped inside 'contents' as a string, so parse it:
-    const parsedData = JSON.parse(data.contents);
-
-    const categorizedAPIs = {};
-
-    parsedData.entries.forEach(api => {
-      const category = api.Category || 'Uncategorized';
-      if (!categorizedAPIs[category]) categorizedAPIs[category] = [];
-      categorizedAPIs[category].push({
-        name: api.API,
-        description: api.Description,
-        url: api.Link,
-        auth: api.Auth || "No"
-      });
-    });
-
-    renderAPIs(categorizedAPIs);
+    displayApis(data);
   })
-  .catch(err => {
-    console.error('Error loading APIs:', err);
-    document.getElementById('api-list').innerText = 'Failed to load APIs.';
+  .catch(error => {
+    console.error('Failed to load APIs:', error);
+    apiContainer.innerHTML = `<p style="color:red;">Failed to load APIs: ${error.message}</p>`;
   });
 
-function renderAPIs(categories) {
-  const container = document.getElementById('api-list');
-  container.innerHTML = '';
+function displayApis(data) {
+  apiContainer.innerHTML = '';
 
-  Object.keys(categories).sort().forEach(category => {
-    const catWrapper = document.createElement('div');
-    catWrapper.classList.add('category');
+  for (const category in data) {
+    const catSection = document.createElement('section');
+    catSection.className = 'category';
 
     const catTitle = document.createElement('h2');
     catTitle.textContent = category;
-    catWrapper.appendChild(catTitle);
+    catSection.appendChild(catTitle);
 
-    categories[category].forEach(api => {
-      const apiCard = document.createElement('div');
-      apiCard.className = 'api-card';
+    const ul = document.createElement('ul');
 
-      apiCard.innerHTML = `
-        <h3>${api.name}</h3>
-        <p>${api.description}</p>
-        <a href="${api.url}" target="_blank">Visit API</a>
-        <p><strong>Auth:</strong> ${api.auth}</p>
+    data[category].forEach(api => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <strong>${api.API}</strong> — ${api.Description}<br />
+        <a href="${api.Link}" target="_blank" rel="noopener noreferrer">Documentation</a>
       `;
-
-      catWrapper.appendChild(apiCard);
+      ul.appendChild(li);
     });
 
-    container.appendChild(catWrapper);
-  });
+    catSection.appendChild(ul);
+    apiContainer.appendChild(catSection);
+  }
 }
