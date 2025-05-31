@@ -14,28 +14,18 @@
 
   <main id="api-container"></main>
 
-  <footer>
-    <p>Free. Open Source. Built on GitHub.</p>
-  </footer>
+  <section id="add-api-form">
+    <h2>Add Your API</h2>
+    <input type="text" id="api-name" placeholder="API Name" required />
+    <input type="text" id="api-description" placeholder="Description" required />
+    <input type="text" id="api-url" placeholder="API URL" required />
+    <input type="text" id="api-auth" placeholder="Auth Type (e.g., No, API Key)" required />
+    <input type="text" id="api-category" placeholder="Category (e.g., Fun & Games)" required />
+    <button id="submit-api">Submit API</button>
+    <p id="submission-status"></p>
+  </section>
 
-  <!-- Firebase Setup -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyDQtrl8316XSV4iWROLMOE3rCMNlN8co8o",
-      authDomain: "apiverse-67eb1.firebaseapp.com",
-      projectId: "apiverse-67eb1",
-      storageBucket: "apiverse-67eb1.firebasestorage.app",
-      messagingSenderId: "703964190155",
-      appId: "1:703964190155:web:8acf1d4668aa80b0c4124e"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    console.log("✅ Firebase initialized");
-  </script>
-
-  <!-- Main Script -->
-  <script src="script.js"></script>
+  <!-- Firebase & Script -->
+  <script type="module" src="script.js"></script>
 </body>
 </html>
