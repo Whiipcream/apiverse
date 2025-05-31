@@ -13,6 +13,7 @@ fetch("apis.json")
 
       const list = document.createElement("div");
       list.className = "api-list";
+      list.style.display = "none"; // collapsed by default
 
       title.addEventListener("click", () => {
         list.style.display = list.style.display === "block" ? "none" : "block";
