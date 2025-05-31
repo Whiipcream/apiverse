@@ -1,20 +1,4 @@
 const apiContainer = document.getElementById("api-container");
-const toggleFormBtn = document.getElementById("toggle-form-btn");
-const submissionSection = document.getElementById("submission-section");
-
-// Initially hide the form
-submissionSection.style.display = "none";
-
-// Toggle the submit form visibility when button clicked
-toggleFormBtn.addEventListener("click", () => {
-  if (submissionSection.style.display === "none") {
-    submissionSection.style.display = "block";
-    toggleFormBtn.textContent = "❌ Close Submit Form";
-  } else {
-    submissionSection.style.display = "none";
-    toggleFormBtn.textContent = "➕ Submit an API";
-  }
-});
 
 // Load and display APIs grouped by category with collapsible sections
 fetch("apis.json")
@@ -44,7 +28,7 @@ fetch("apis.json")
         list.appendChild(item);
       });
 
-      // Collapsible category on title click
+      // Make list collapsible on category title click
       title.addEventListener("click", () => {
         list.classList.toggle("hidden");
       });
@@ -59,10 +43,7 @@ fetch("apis.json")
     console.error(err);
   });
 
-// GitHub info - put your token and repo here
-const githubToken = "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";
-const githubRepo = "Whiipcream/apiverse";
-
+// Handle form submission — creates a GitHub issue for review (no direct JSON update)
 document.getElementById("api-form").addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -83,25 +64,24 @@ document.getElementById("api-form").addEventListener("submit", async (e) => {
 Please review and add this API to the apis.json file.
 `;
 
-  const messageEl = document.getElementById("form-message");
+  const githubToken = ""; // add your token here if private repo
 
   try {
-    const response = await fetch(`https://api.github.com/repos/${githubRepo}/issues`, {
+    const response = await fetch("https://api.github.com/repos/Whiipcream/apiverse/issues", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `token ${githubToken}`
+        ...(githubToken && { Authorization: `token ${githubToken}` })
       },
       body: JSON.stringify({ title: issueTitle, body: issueBody }),
     });
+
+    const messageEl = document.getElementById("form-message");
 
     if (response.ok) {
       messageEl.style.color = "green";
       messageEl.textContent = "✅ Submitted! Your API will be reviewed soon.";
       e.target.reset();
-      // Optionally hide the form after submit
-      // submissionSection.style.display = "none";
-      // toggleFormBtn.textContent = "➕ Submit an API";
     } else {
       const errData = await response.json();
       messageEl.style.color = "red";
@@ -109,6 +89,7 @@ Please review and add this API to the apis.json file.
       console.error("GitHub API error:", errData);
     }
   } catch (error) {
+    const messageEl = document.getElementById("form-message");
     messageEl.style.color = "red";
     messageEl.textContent = "❌ Submission failed. Check console.";
     console.error(error);
