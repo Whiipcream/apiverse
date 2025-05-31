@@ -1,116 +1,82 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f4f4f9;
   margin: 0;
-  padding: 20px;
-  color: #333;
+  padding: 0;
 }
 
 header {
+  background: #222;
+  color: #fff;
+  padding: 1em;
   text-align: center;
-  margin-bottom: 30px;
 }
 
-header h1 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-}
-
-header p {
-  color: #666;
-  font-size: 1em;
+main {
+  padding: 1em;
 }
 
 .category {
-  background: #ffffff;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  padding: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2em;
 }
 
 .category h2 {
-  margin: 0;
+  background: #333;
+  color: #fff;
+  padding: 0.5em;
   cursor: pointer;
-  font-size: 1.4em;
-  background-color: #f0f0f0;
-  padding: 10px;
-  border-radius: 5px;
+  margin: 0;
 }
 
 .api-list {
-  padding-left: 15px;
-  padding-top: 10px;
   display: block;
+  padding: 0.5em;
+  background: #fff;
+  border: 1px solid #ddd;
 }
 
 .api {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-left: 3px solid #007bff;
-  background-color: #f9f9f9;
-  border-radius: 4px;
+  border-bottom: 1px solid #ccc;
+  padding: 0.5em 0;
+}
+
+.api:last-child {
+  border-bottom: none;
 }
 
 .api a {
   font-weight: bold;
-  color: #007bff;
   text-decoration: none;
+  color: #007BFF;
 }
 
-.api a:hover {
-  text-decoration: underline;
+.submission-section {
+  background: #fff;
+  padding: 1em;
+  border-top: 2px solid #eee;
+  margin: 2em 1em;
 }
 
-.api small {
-  display: block;
-  color: #555;
-  font-size: 0.9em;
-  margin-top: 3px;
+#api-form {
+  display: grid;
+  gap: 0.5em;
 }
 
-#add-api-form {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-#add-api-form h2 {
-  margin-top: 0;
-  font-size: 1.5em;
-}
-
-#add-api-form input {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 6px;
+#api-form input,
+#api-form button {
+  padding: 0.6em;
+  font-size: 1em;
   border: 1px solid #ccc;
-  font-size: 1em;
-  box-sizing: border-box;
 }
 
-#submit-api {
-  background: #007bff;
+#api-form button {
+  background: #28a745;
   color: white;
-  padding: 12px;
-  font-size: 1em;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  width: 100%;
-  transition: background 0.2s ease-in-out;
 }
 
-#submit-api:hover {
-  background: #0056b3;
-}
-
-#submission-status {
-  margin-top: 10px;
-  font-weight: bold;
-  color: #007bff;
+#form-message {
+  margin-top: 0.5em;
+  font-style: italic;
 }
