@@ -1,4 +1,4 @@
-fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://raw.githubusercontent.com/public-apis/public-apis/master/entries.json'))
+fetch('https://thingproxy.freeboard.io/fetch/https://raw.githubusercontent.com/public-apis/public-apis/master/entries.json')
   .then(response => {
     if (!response.ok) throw new Error('Network response was not ok');
     return response.json();
