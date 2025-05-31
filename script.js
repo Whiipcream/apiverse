@@ -1,9 +1,15 @@
-fetch('https://raw.githubusercontent.com/public-apis/public-apis/master/entries.json')
-  .then(response => response.json())
+fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://raw.githubusercontent.com/public-apis/public-apis/master/entries.json'))
+  .then(response => {
+    if (!response.ok) throw new Error('Network response was not ok');
+    return response.json();
+  })
   .then(data => {
+    // The API response is wrapped inside 'contents' as a string, so parse it:
+    const parsedData = JSON.parse(data.contents);
+
     const categorizedAPIs = {};
 
-    data.entries.forEach(api => {
+    parsedData.entries.forEach(api => {
       const category = api.Category || 'Uncategorized';
       if (!categorizedAPIs[category]) categorizedAPIs[category] = [];
       categorizedAPIs[category].push({
