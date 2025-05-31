@@ -13,12 +13,8 @@ fetch("apis.json")
 
       const list = document.createElement("div");
       list.className = "api-list";
-      list.style.display = "none"; // collapsed by default
 
-      title.addEventListener("click", () => {
-        list.style.display = list.style.display === "block" ? "none" : "block";
-      });
-
+      // Append APIs to the list
       apis.forEach((api) => {
         const item = document.createElement("div");
         item.className = "api";
@@ -28,6 +24,11 @@ fetch("apis.json")
           <small><strong>Auth:</strong> ${api.auth}</small>
         `;
         list.appendChild(item);
+      });
+
+      // Add toggle behavior AFTER defining list
+      title.addEventListener("click", () => {
+        list.style.display = list.style.display === "block" ? "none" : "block";
       });
 
       section.appendChild(title);
