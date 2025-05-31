@@ -36,5 +36,55 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    document.getElementById("toggle-form-btn").addEventListener("click", () => {
+      const formSection = document.getElementById("submission-section");
+      formSection.style.display = formSection.style.display === "none" ? "block" : "none";
+    });
+
+    document.getElementById("api-form").addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const url = document.getElementById("url").value.trim();
+      const description = document.getElementById("description").value.trim();
+      const auth = document.getElementById("auth").value.trim();
+      const category = document.getElementById("category").value.trim();
+
+      const issueTitle = `New API Submission: ${name}`;
+      const issueBody = `
+**Name:** ${name}
+**URL:** ${url}
+**Description:** ${description}
+**Auth:** ${auth}
+**Category:** ${category}
+`;
+
+      const response = await fetch("https://api.github.com/repos/Whiipcream/apiverse/issues", {
+        method: "POST",
+        headers: {
+          "Authorization": "token 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",
+          "Accept": "application/vnd.github+json"
+        },
+        body: JSON.stringify({
+          title: issueTitle,
+          body: issueBody,
+          labels: ["apisubmission"]
+        })
+      });
+
+      const messageEl = document.getElementById("form-message");
+
+      if (response.ok) {
+        messageEl.textContent = "✅ Submission successful! It will be reviewed shortly.";
+        messageEl.style.color = "green";
+        e.target.reset();
+      } else {
+        messageEl.textContent = "❌ Submission failed. Please try again.";
+        messageEl.style.color = "red";
+      }
+    });
+  </script>
 </body>
 </html>
