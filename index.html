@@ -2,30 +2,140 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>APIverse Explorer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>APIverse</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .category {
+      background: #fff;
+      margin: 1rem 0;
+      border-radius: 5px;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .category h2 {
+      margin: 0 0 0.5rem 0;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .api-list {
+      display: none;
+      padding-left: 1rem;
+    }
+
+    .api {
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .api a {
+      font-weight: bold;
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .api a:hover {
+      text-decoration: underline;
+    }
+
+    .api small {
+      color: #555;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>🌐 APIverse Explorer</h1>
-    <p>Discover and use 50+ powerful public APIs</p>
-  </header>
+  <h1>🌐 APIverse Explorer</h1>
+  <div id="api-container">Loading APIs...</div>
 
-  <main id="api-container"></main>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+    import { getFirestore, doc, setDoc, getDoc, getDocs, collection } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
 
-  <section id="add-api-form">
-    <h2>Add Your API</h2>
-    <input type="text" id="api-name" placeholder="API Name" required />
-    <input type="text" id="api-description" placeholder="Description" required />
-    <input type="text" id="api-url" placeholder="API URL" required />
-    <input type="text" id="api-auth" placeholder="Auth Type (e.g., No, API Key)" required />
-    <input type="text" id="api-category" placeholder="Category (e.g., Fun & Games)" required />
-    <button id="submit-api">Submit API</button>
-    <p id="submission-status"></p>
-  </section>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDQtrl8316XSV4iWROLMOE3rCMNlN8co8o",
+      authDomain: "apiverse-67eb1.firebaseapp.com",
+      projectId: "apiverse-67eb1",
+      storageBucket: "apiverse-67eb1.appspot.com",
+      messagingSenderId: "703964190155",
+      appId: "1:703964190155:web:8acf1d4668aa80b0c4124e"
+    };
 
-  <!-- Firebase & Script -->
-  <script type="module" src="script.js"></script>
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // STEP 1: Load apis.json ONCE and store into Firestore if missing
+    fetch("apis.json")
+      .then((res) => res.json())
+      .then(async (data) => {
+        const categories = data.categories;
+        for (const [categoryName, apis] of Object.entries(categories)) {
+          const docRef = doc(db, "categories", categoryName);
+          const docSnap = await getDoc(docRef);
+
+          if (!docSnap.exists()) {
+            await setDoc(docRef, { apis });
+            console.log(`✅ Uploaded: ${categoryName}`);
+          } else {
+            console.log(`⚠️ Skipped: ${categoryName} already in Firestore.`);
+          }
+        }
+
+        loadCategoriesFromFirestore(); // Call to load after upload
+      })
+      .catch((err) => {
+        console.error("🔥 Upload failed:", err);
+        document.getElementById("api-container").innerHTML = "<p>Failed to load APIs.</p>";
+      });
+
+    // STEP 2: Load all categories from Firestore and render them
+    async function loadCategoriesFromFirestore() {
+      const container = document.getElementById("api-container");
+      container.innerHTML = ""; // Clear placeholder
+
+      const querySnapshot = await getDocs(collection(db, "categories"));
+
+      querySnapshot.forEach((docSnap) => {
+        const category = docSnap.id;
+        const apis = docSnap.data().apis;
+
+        const section = document.createElement("div");
+        section.className = "category";
+
+        const title = document.createElement("h2");
+        title.textContent = category;
+        title.addEventListener("click", () => {
+          list.style.display = list.style.display === "block" ? "none" : "block";
+        });
+
+        const list = document.createElement("div");
+        list.className = "api-list";
+
+        apis.forEach((api) => {
+          const item = document.createElement("div");
+          item.className = "api";
+          item.innerHTML = `
+            <a href="${api.url}" target="_blank">${api.name}</a><br/>
+            <small>${api.description}</small>
+            <small><strong>Auth:</strong> ${api.auth}</small>
+          `;
+          list.appendChild(item);
+        });
+
+        section.appendChild(title);
+        section.appendChild(list);
+        container.appendChild(section);
+      });
+    }
+  </script>
 </body>
 </html>
