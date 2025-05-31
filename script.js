@@ -1,38 +1,40 @@
-const apiContainer = document.getElementById('api-container');
+fetch("apis.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const container = document.getElementById("api-container");
+    const categories = data.categories;
 
-// Load APIs from local JSON file
-fetch('apis.json')
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    const categories = data.categories; // your JSON's root key
+    for (const [category, apis] of Object.entries(categories)) {
+      const section = document.createElement("div");
+      section.className = "category";
 
-    for (const category in categories) {
-      const section = document.createElement('section');
-      const heading = document.createElement('h2');
-      heading.textContent = category;
-      section.appendChild(heading);
-
-      categories[category].forEach(api => {
-        const apiDiv = document.createElement('div');
-        apiDiv.classList.add('api-item');
-        apiDiv.innerHTML = `
-          <h3>${api.name}</h3>
-          <p>${api.description}</p>
-          <p><strong>Auth:</strong> ${api.auth}</p>
-          <a href="${api.url}" target="_blank" rel="noopener noreferrer">API Docs</a>
-        `;
-        section.appendChild(apiDiv);
+      const title = document.createElement("h2");
+      title.textContent = category;
+      title.addEventListener("click", () => {
+        list.style.display = list.style.display === "block" ? "none" : "block";
       });
 
-      apiContainer.appendChild(section);
+      const list = document.createElement("div");
+      list.className = "api-list";
+
+      apis.forEach((api) => {
+        const item = document.createElement("div");
+        item.className = "api";
+        item.innerHTML = `
+          <a href="${api.url}" target="_blank">${api.name}</a><br/>
+          <small>${api.description}</small><br/>
+          <small><strong>Auth:</strong> ${api.auth}</small>
+        `;
+        list.appendChild(item);
+      });
+
+      section.appendChild(title);
+      section.appendChild(list);
+      container.appendChild(section);
     }
   })
-  .catch(err => {
-    apiContainer.textContent = 'Failed to load APIs';
+  .catch((err) => {
+    document.getElementById("api-container").innerHTML =
+      "<p>Failed to load APIs. Check your apis.json file.</p>";
     console.error(err);
   });
