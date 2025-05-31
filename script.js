@@ -60,7 +60,7 @@ fetch("apis.json")
   });
 
 // GitHub info - put your token and repo here
-const githubToken = "YOUR_PERSONAL_ACCESS_TOKEN";
+const githubToken = "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";
 const githubRepo = "Whiipcream/apiverse";
 
 document.getElementById("api-form").addEventListener("submit", async (e) => {
