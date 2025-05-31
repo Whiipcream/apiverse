@@ -9,12 +9,17 @@ fetch("apis.json")
       section.className = "category";
 
       const title = document.createElement("h2");
-      title.textContent = category;
+      title.className = "category-title";
+      title.textContent = `▸ ${category}`;
 
       const list = document.createElement("div");
-      list.className = "api-list";
+      list.className = "api-list hidden"; // hidden by default
 
-      // Append APIs to the list
+      title.addEventListener("click", () => {
+        const isHidden = list.classList.toggle("hidden");
+        title.textContent = `${isHidden ? "▸" : "▾"} ${category}`;
+      });
+
       apis.forEach((api) => {
         const item = document.createElement("div");
         item.className = "api";
@@ -24,11 +29,6 @@ fetch("apis.json")
           <small><strong>Auth:</strong> ${api.auth}</small>
         `;
         list.appendChild(item);
-      });
-
-      // Add toggle behavior AFTER defining list
-      title.addEventListener("click", () => {
-        list.style.display = list.style.display === "block" ? "none" : "block";
       });
 
       section.appendChild(title);
