@@ -10,8 +10,6 @@
   <header>
     <h1>🌐 APIverse Explorer</h1>
     <p>Discover and use powerful public APIs</p>
-
-    <!-- Submit toggle button -->
     <button id="toggle-form-btn" class="btn-primary">➕ Submit an API</button>
   </header>
 
@@ -37,12 +35,19 @@
 
   <script src="script.js"></script>
 
+  <!-- Toggle and GitHub Submission Logic -->
   <script>
+    // Show/hide the submission form
     document.getElementById("toggle-form-btn").addEventListener("click", () => {
       const formSection = document.getElementById("submission-section");
-      formSection.style.display = formSection.style.display === "none" ? "block" : "none";
+      if (formSection.style.display === "none" || !formSection.style.display) {
+        formSection.style.display = "block";
+      } else {
+        formSection.style.display = "none";
+      }
     });
 
+    // GitHub API submission logic
     document.getElementById("api-form").addEventListener("submit", async (e) => {
       e.preventDefault();
 
