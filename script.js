@@ -6,7 +6,7 @@ fetch("apis.json")
 
     for (const [category, apis] of Object.entries(categories)) {
       const section = document.createElement("div");
-      section.className = "category collapsed"; // 👈 collapsed by default
+      section.className = "category collapsed"; // collapsed by default
 
       const title = document.createElement("h2");
       title.textContent = category;
