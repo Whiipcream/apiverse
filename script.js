@@ -10,12 +10,13 @@ fetch("apis.json")
 
       const title = document.createElement("h2");
       title.textContent = category;
-      title.addEventListener("click", () => {
-        list.style.display = list.style.display === "block" ? "none" : "block";
-      });
 
       const list = document.createElement("div");
       list.className = "api-list";
+
+      title.addEventListener("click", () => {
+        list.style.display = list.style.display === "block" ? "none" : "block";
+      });
 
       apis.forEach((api) => {
         const item = document.createElement("div");
@@ -37,4 +38,4 @@ fetch("apis.json")
     document.getElementById("api-container").innerHTML =
       "<p>Failed to load APIs. Check your apis.json file.</p>";
     console.error(err);
-  }); this the one I used to get it back how I wanted 
+  });
