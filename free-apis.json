@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Cat Facts API",
+    "url": "https://catfact.ninja/fact",
+    "description": "Get random cat facts."
+  },
+  {
+    "name": "Dog Facts API",
+    "url": "https://dog.ceo/api/breeds/image/random",
+    "description": "Get random dog images."
+  },
+  {
+    "name": "JokeAPI",
+    "url": "https://v2.jokeapi.dev/joke/Any",
+    "description": "Get programming and general jokes."
+  }
+]
