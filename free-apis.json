@@ -1,136 +1,54 @@
 {
   "categories": {
     "Animals": [
-      {
-        "name": "Cat Facts",
-        "url": "https://catfact.ninja/fact",
-        "description": "Random cat facts",
-        "auth": "No"
-      },
-      {
-        "name": "Dog CEO",
-        "url": "https://dog.ceo/api/breeds/image/random",
-        "description": "Random dog images",
-        "auth": "No"
-      }
+      {"name": "Cat Facts", "url": "https://catfact.ninja/fact", "description": "Random cat facts", "auth": "No"},
+      {"name": "Dog CEO", "url": "https://dog.ceo/api/breeds/image/random", "description": "Random dog images", "auth": "No"},
+      {"name": "FishWatch", "url": "https://www.fishwatch.gov/api/species", "description": "US seafood facts", "auth": "No"}
     ],
     "Games & Fun": [
-      {
-        "name": "JokeAPI",
-        "url": "https://v2.jokeapi.dev/joke/Any",
-        "description": "Programming/general jokes",
-        "auth": "No"
-      },
-      {
-        "name": "Deck of Cards",
-        "url": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1",
-        "description": "Simulate a deck of cards",
-        "auth": "No"
-      }
+      {"name": "JokeAPI", "url": "https://v2.jokeapi.dev/joke/Any", "description": "Programming/general jokes", "auth": "No"},
+      {"name": "Deck of Cards", "url": "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1", "description": "Simulate a deck of cards", "auth": "No"},
+      {"name": "Bored API", "url": "https://www.boredapi.com/api/activity", "description": "Get a random activity suggestion", "auth": "No"}
     ],
     "Crypto & Finance": [
-      {
-        "name": "CoinGecko",
-        "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd",
-        "description": "Crypto market prices",
-        "auth": "No"
-      },
-      {
-        "name": "ExchangeRate API",
-        "url": "https://open.er-api.com/v6/latest/USD",
-        "description": "Currency exchange rates",
-        "auth": "No"
-      }
+      {"name": "CoinGecko", "url": "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd", "description": "Crypto market prices", "auth": "No"},
+      {"name": "ExchangeRate API", "url": "https://open.er-api.com/v6/latest/USD", "description": "Currency exchange rates", "auth": "No"},
+      {"name": "Metals-API", "url": "https://metals-api.com/api/latest?base=USD&symbols=XAU,XAG", "description": "Precious metals prices", "auth": "Free Key"}
     ],
     "Space & Science": [
-      {
-        "name": "NASA APOD",
-        "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY",
-        "description": "Astronomy Picture of the Day",
-        "auth": "Free Key"
-      },
-      {
-        "name": "Open Notify",
-        "url": "http://api.open-notify.org/iss-now.json",
-        "description": "ISS Current Location",
-        "auth": "No"
-      }
-    ],
-    "News & Info": [
-      {
-        "name": "Mediastack",
-        "url": "http://api.mediastack.com/v1/news?access_key=demo",
-        "description": "News headlines",
-        "auth": "Free Key"
-      }
+      {"name": "NASA APOD", "url": "https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY", "description": "Astronomy Picture of the Day", "auth": "Free Key"},
+      {"name": "Open Notify", "url": "http://api.open-notify.org/iss-now.json", "description": "ISS Current Location", "auth": "No"},
+      {"name": "Data USA", "url": "https://datausa.io/api/data?drilldowns=Nation&measures=Population", "description": "US population statistics", "auth": "No"}
     ],
     "Weather": [
-      {
-        "name": "WeatherAPI",
-        "url": "http://api.weatherapi.com/v1/current.json?key=demo&q=London",
-        "description": "Weather data",
-        "auth": "Free Key"
-      },
-      {
-        "name": "Open-Meteo",
-        "url": "https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&hourly=temperature_2m",
-        "description": "Free weather forecast",
-        "auth": "No"
-      }
+      {"name": "WeatherAPI", "url": "http://api.weatherapi.com/v1/current.json?key=demo&q=London", "description": "Weather data", "auth": "Free Key"},
+      {"name": "Open-Meteo", "url": "https://api.open-meteo.com/v1/forecast?latitude=35&longitude=139&hourly=temperature_2m", "description": "Free weather forecast", "auth": "No"},
+      {"name": "Weatherbit", "url": "https://api.weatherbit.io/v2.0/current?city=Raleigh,NC&key=demo", "description": "Weather info by city", "auth": "Free Key"}
     ],
     "AI & Tools": [
-      {
-        "name": "Fun Translations",
-        "url": "https://api.funtranslations.com/translate/yoda.json?text=Master+Yoda+I+am",
-        "description": "Yoda-speak and more",
-        "auth": "Free Key"
-      },
-      {
-        "name": "Agify.io",
-        "url": "https://api.agify.io?name=michael",
-        "description": "Predict age by name",
-        "auth": "No"
-      },
-      {
-        "name": "Genderize.io",
-        "url": "https://api.genderize.io?name=luc",
-        "description": "Predict gender by name",
-        "auth": "No"
-      },
-      {
-        "name": "Nationalize.io",
-        "url": "https://api.nationalize.io?name=nathaniel",
-        "description": "Predict nationality by name",
-        "auth": "No"
-      }
+      {"name": "Agify.io", "url": "https://api.agify.io?name=michael", "description": "Predict age by name", "auth": "No"},
+      {"name": "Genderize.io", "url": "https://api.genderize.io?name=luc", "description": "Predict gender by name", "auth": "No"},
+      {"name": "Nationalize.io", "url": "https://api.nationalize.io?name=nathaniel", "description": "Predict nationality by name", "auth": "No"},
+      {"name": "Fun Translations", "url": "https://api.funtranslations.com/translate/yoda.json?text=Master+Yoda+I+am", "description": "Yoda-speak and more", "auth": "Free Key"}
+    ],
+    "News & Info": [
+      {"name": "Mediastack", "url": "http://api.mediastack.com/v1/news?access_key=demo", "description": "News headlines", "auth": "Free Key"},
+      {"name": "GNews", "url": "https://gnews.io/api/v4/top-headlines?token=demo&q=example", "description": "News articles", "auth": "Free Key"}
     ],
     "Text & Data": [
-      {
-        "name": "Numbers API",
-        "url": "http://numbersapi.com/random/trivia",
-        "description": "Random number trivia",
-        "auth": "No"
-      },
-      {
-        "name": "Quotes REST",
-        "url": "https://api.quotable.io/random",
-        "description": "Inspirational quotes",
-        "auth": "No"
-      }
+      {"name": "Numbers API", "url": "http://numbersapi.com/random/trivia", "description": "Random number trivia", "auth": "No"},
+      {"name": "Quotes REST", "url": "https://api.quotable.io/random", "description": "Inspirational quotes", "auth": "No"},
+      {"name": "Random Useless Facts", "url": "https://uselessfacts.jsph.pl/random.json?language=en", "description": "Totally useless facts", "auth": "No"}
     ],
     "Food & Recipes": [
-      {
-        "name": "TheMealDB",
-        "url": "https://www.themealdb.com/api/json/v1/1/random.php",
-        "description": "Random meal recipes",
-        "auth": "No"
-      },
-      {
-        "name": "Cocktail DB",
-        "url": "https://www.thecocktaildb.com/api/json/v1/1/random.php",
-        "description": "Random cocktail recipes",
-        "auth": "No"
-      }
+      {"name": "TheMealDB", "url": "https://www.themealdb.com/api/json/v1/1/random.php", "description": "Random meal recipes", "auth": "No"},
+      {"name": "Cocktail DB", "url": "https://www.thecocktaildb.com/api/json/v1/1/random.php", "description": "Random cocktail recipes", "auth": "No"},
+      {"name": "Spoonacular", "url": "https://api.spoonacular.com/recipes/random?apiKey=demo", "description": "More recipe ideas", "auth": "Free Key"}
+    ],
+    "Books & Education": [
+      {"name": "Open Library", "url": "https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&format=json", "description": "Book metadata by ISBN", "auth": "No"},
+      {"name": "Gutendex", "url": "https://gutendex.com/books", "description": "Public domain books", "auth": "No"},
+      {"name": "Google Books", "url": "https://www.googleapis.com/books/v1/volumes?q=isbn:9781451648546", "description": "Book info search", "auth": "Free Key"}
     ]
   }
 }
