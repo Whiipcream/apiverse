@@ -1,1 +1,256 @@
-
+{
+  "categories": {
+    "Animals": [
+      {
+        "name": "HTTP Status Dogs",
+        "description": "Dogs for every HTTP response.",
+        "url": "https://http.dog",
+        "auth": "No"
+      },
+      {
+        "name": "RandomFox",
+        "description": "Random pictures of foxes.",
+        "url": "https://randomfox.ca/floof/",
+        "auth": "No"
+      }
+    ],
+    "Fun & Games": [
+      {
+        "name": "Chuck Norris Jokes",
+        "description": "Get random Chuck Norris jokes.",
+        "url": "https://api.chucknorris.io",
+        "auth": "No"
+      },
+      {
+        "name": "Trivia API",
+        "description": "Access trivia questions.",
+        "url": "https://opentdb.com/api_config.php",
+        "auth": "No"
+      }
+    ],
+    "Weather & Climate": [
+      {
+        "name": "National Weather Service",
+        "description": "Weather forecasts and alerts.",
+        "url": "https://api.weather.gov",
+        "auth": "No"
+      },
+      {
+        "name": "Meteosource",
+        "description": "Global weather data.",
+        "url": "https://www.meteosource.com/",
+        "auth": "API Key"
+      }
+    ],
+    "Space & Science": [
+      {
+        "name": "Astronomy Picture of the Day",
+        "description": "Daily astronomy images.",
+        "url": "https://apod.nasa.gov/apod/astropix.html",
+        "auth": "No"
+      },
+      {
+        "name": "Open Notify",
+        "description": "ISS location and astronauts.",
+        "url": "http://open-notify.org/Open-Notify-API/",
+        "auth": "No"
+      }
+    ],
+    "Finance & Crypto": [
+      {
+        "name": "Finnhub",
+        "description": "Real-time stock and crypto data.",
+        "url": "https://finnhub.io/docs/api",
+        "auth": "API Key"
+      },
+      {
+        "name": "Binance API",
+        "description": "Cryptocurrency exchange data.",
+        "url": "https://github.com/binance/binance-spot-api-docs",
+        "auth": "API Key"
+      }
+    ],
+    "Text & Language": [
+      {
+        "name": "LibreTranslate",
+        "description": "Open-source translation API.",
+        "url": "https://libretranslate.com/docs/",
+        "auth": "No"
+      },
+      {
+        "name": "LanguageTool",
+        "description": "Grammar and spell checker.",
+        "url": "https://languagetool.org/http-api/swagger-ui/#/",
+        "auth": "No"
+      }
+    ],
+    "Health & Wellness": [
+      {
+        "name": "MyHealthfinder",
+        "description": "Evidence-based health content.",
+        "url": "https://health.gov/myhealthfinder/developer",
+        "auth": "No"
+      },
+      {
+        "name": "Withings API",
+        "description": "Health and wellness data.",
+        "url": "https://developer.withings.com/",
+        "auth": "OAuth"
+      }
+    ],
+    "Utilities & Tools": [
+      {
+        "name": "IPinfo",
+        "description": "IP address information.",
+        "url": "https://ipinfo.io/developers",
+        "auth": "API Key"
+      },
+      {
+        "name": "QRickit QR Code API",
+        "description": "Generate QR codes.",
+        "url": "https://qrickit.com/qrickit_apps/qrickit_api.php",
+        "auth": "No"
+      }
+    ],
+    "Media & Images": [
+      {
+        "name": "Pexels",
+        "description": "Free stock photos and videos.",
+        "url": "https://www.pexels.com/api/",
+        "auth": "API Key"
+      },
+      {
+        "name": "Pixabay",
+        "description": "Free images and videos.",
+        "url": "https://pixabay.com/api/docs/",
+        "auth": "API Key"
+      }
+    ],
+    "News & Media": [
+      {
+        "name": "NewsAPI",
+        "description": "News articles from various sources.",
+        "url": "https://newsapi.org/",
+        "auth": "API Key"
+      },
+      {
+        "name": "Currents API",
+        "description": "Latest news from various sources.",
+        "url": "https://currentsapi.services/en/docs/",
+        "auth": "API Key"
+      }
+    ],
+    "Tech & Development": [
+      {
+        "name": "Stack Exchange API",
+        "description": "Access Stack Exchange data.",
+        "url": "https://api.stackexchange.com/",
+        "auth": "No"
+      },
+      {
+        "name": "GitLab API",
+        "description": "Manage GitLab projects.",
+        "url": "https://docs.gitlab.com/ee/api/",
+        "auth": "OAuth/Token"
+      }
+    ],
+    "Music & Audio": [
+      {
+        "name": "Last.fm API",
+        "description": "Music data and recommendations.",
+        "url": "https://www.last.fm/api",
+        "auth": "API Key"
+      },
+      {
+        "name": "AudD Music Recognition",
+        "description": "Recognize music by sound.",
+        "url": "https://audd.io/",
+        "auth": "API Key"
+      }
+    ],
+    "Social & Communication": [
+      {
+        "name": "Facebook Graph API",
+        "description": "Access Facebook social graph.",
+        "url": "https://developers.facebook.com/docs/graph-api/",
+        "auth": "OAuth"
+      },
+      {
+        "name": "LinkedIn API",
+        "description": "Professional networking data.",
+        "url": "https://docs.microsoft.com/en-us/linkedin/",
+        "auth": "OAuth"
+      }
+    ],
+    "Geolocation & Maps": [
+      {
+        "name": "OpenStreetMap API",
+        "description": "Free editable map of the world.",
+        "url": "https://wiki.openstreetmap.org/wiki/OpenStreetMap_API",
+        "auth": "No"
+      },
+      {
+        "name": "GeoNames",
+        "description": "Geographical database.",
+        "url": "http://www.geonames.org/export/web-services.html",
+        "auth": "No"
+      }
+    ],
+    "Weather": [
+      {
+        "name": "Weatherbit API",
+        "description": "Weather forecasts and historical data.",
+        "url": "https://www.weatherbit.io/api",
+        "auth": "API Key"
+      },
+      {
+        "name": "Climacell (Tomorrow.io)",
+        "description": "Hyper-local weather data.",
+        "url": "https://docs.tomorrow.io/",
+        "auth": "API Key"
+      }
+    ],
+    "Finance": [
+      {
+        "name": "IEX Cloud",
+        "description": "Stock prices and financial data.",
+        "url": "https://iexcloud.io/docs/api/",
+        "auth": "API Key"
+      },
+      {
+        "name": "Alpha Vantage",
+        "description": "Stock and forex market data.",
+        "url": "https://www.alphavantage.co/documentation/",
+        "auth": "API Key"
+      }
+    ],
+    "Games & Entertainment": [
+      {
+        "name": "RAWG Video Games Database",
+        "description": "Huge video game database API.",
+        "url": "https://rawg.io/apidocs",
+        "auth": "API Key"
+      },
+      {
+        "name": "Board Game Atlas",
+        "description": "Board game search and info.",
+        "url": "https://www.boardgameatlas.com/api/docs",
+        "auth": "API Key"
+      }
+    ],
+    "Books & Education": [
+      {
+        "name": "Google Books API",
+        "description": "Search for books and get information.",
+        "url": "https://developers.google.com/books",
+        "auth": "API Key"
+      },
+      {
+        "name": "Open Library",
+        "description": "Access to millions of books.",
+        "url": "https://openlibrary.org/developers/api",
+        "auth": "No"
+      }
+    ]
+  }
+}
