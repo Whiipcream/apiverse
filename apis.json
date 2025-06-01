@@ -265,8 +265,7 @@
         "url": "https://discord.com/developers/docs/intro",
         "auth": "OAuth2"
       }
-    ],
-    "Geolocation & Maps": [
+    ],    "Geolocation & Maps": [
       {
         "name": "Google Maps API",
         "description": "Maps, geocoding, routes, places.",
@@ -276,4 +275,61 @@
       {
         "name": "Mapbox API",
         "description": "Customizable maps and geolocation services.",
-        "url": "https://docs.mapbox.com/api
+        "url": "https://docs.mapbox.com/api",
+        "auth": "API Key"
+      },
+      {
+        "name": "OpenCage Geocoder",
+        "description": "Forward and reverse geocoding with worldwide coverage.",
+        "url": "https://opencagedata.com/api",
+        "auth": "API Key"
+      },
+      {
+        "name": "PositionStack",
+        "description": "Real-time geocoding and location data.",
+        "url": "https://positionstack.com/documentation",
+        "auth": "API Key"
+      }
+    ],
+
+    "Weather": [
+      {
+        "name": "OpenWeatherMap",
+        "description": "Current weather, forecasts, and historical data.",
+        "url": "https://openweathermap.org/api",
+        "auth": "API Key"
+      },
+      {
+        "name": "Weatherbit",
+        "description": "Weather forecasts, current conditions, and alerts.",
+        "url": "https://www.weatherbit.io/api",
+        "auth": "API Key"
+      },
+      {
+        "name": "Climacell (Tomorrow.io)",
+        "description": "Hyper-local weather data and forecasts.",
+        "url": "https://docs.tomorrow.io/",
+        "auth": "API Key"
+      }
+    ],
+
+    "Finance": [
+      {
+        "name": "Alpha Vantage",
+        "description": "Stock and forex market data.",
+        "url": "https://www.alphavantage.co/documentation/",
+        "auth": "API Key"
+      },
+      {
+        "name": "CoinGecko",
+        "description": "Cryptocurrency data and market stats.",
+        "url": "https://www.coingecko.com/en/api",
+        "auth": "No Auth"
+      },
+      {
+        "name": "IEX Cloud",
+        "description": "Stock prices, financials, and market data.",
+        "url": "https://iexcloud.io/docs/api/",
+        "auth": "API Key"
+      }
+    ]
