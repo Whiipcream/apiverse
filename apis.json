@@ -181,6 +181,279 @@
         "url": "https://mediastack.com/",
         "auth": "API Key"
       }
-    ]
-  }
+    ],
+  "Tech & Development": [
+    {
+      "name": "GitHub API",
+      "description": "Access GitHub repositories, commits, issues, users.",
+      "url": "https://docs.github.com/en/rest",
+      "auth": "OAuth/Token"
+    },
+    {
+      "name": "JSONPlaceholder",
+      "description": "Fake online REST API for testing and prototyping.",
+      "url": "https://jsonplaceholder.typicode.com",
+      "auth": "No"
+    },
+    {
+      "name": "Public APIs",
+      "description": "List of free public APIs.",
+      "url": "https://public-apis.io",
+      "auth": "No"
+    },
+    {
+      "name": "Postman Echo",
+      "description": "Test your REST clients and make sample requests.",
+      "url": "https://docs.postman-echo.com",
+      "auth": "No"
+    },
+    {
+      "name": "REST Countries",
+      "description": "Information about countries worldwide.",
+      "url": "https://restcountries.com",
+      "auth": "No"
+    }
+  ],
+  "Music & Audio": [
+    {
+      "name": "Spotify Web API",
+      "description": "Access music catalog, playlists, user data.",
+      "url": "https://developer.spotify.com/documentation/web-api/",
+      "auth": "OAuth"
+    },
+    {
+      "name": "Lyrics.ovh",
+      "description": "Get song lyrics by artist and title.",
+      "url": "https://lyricsovh.docs.apiary.io/",
+      "auth": "No"
+    },
+    {
+      "name": "Deezer API",
+      "description": "Music catalog, user playlists, radio stations.",
+      "url": "https://developers.deezer.com/api",
+      "auth": "No"
+    },
+    {
+      "name": "SoundCloud API",
+      "description": "Access tracks, playlists, user info.",
+      "url": "https://developers.soundcloud.com/docs/api/reference",
+      "auth": "OAuth"
+    }
+  ],
+  "Social & Communication": [
+    {
+      "name": "Twilio",
+      "description": "Programmable SMS, voice, and video.",
+      "url": "https://www.twilio.com/docs/usage/api",
+      "auth": "API Key"
+    },
+    {
+      "name": "Slack API",
+      "description": "Integrate with Slack messages, channels, and users.",
+      "url": "https://api.slack.com/",
+      "auth": "OAuth"
+    },
+    {
+      "name": "Telegram Bot API",
+      "description": "Create bots for Telegram messaging platform.",
+      "url": "https://core.telegram.org/bots/api",
+      "auth": "Token"
+    },
+    {
+      "name": "Discord API",
+      "description": "Interact with Discord channels, messages, users.",
+      "url": "https://discord.com/developers/docs/intro",
+      "auth": "OAuth2"
+    }
+  ],
+  "Geolocation & Maps": [
+    {
+      "name": "Google Maps API",
+      "description": "Maps, geocoding, routes, places.",
+      "url": "https://developers.google.com/maps/documentation",
+      "auth": "API Key"
+    },
+    {
+      "name": "Mapbox API",
+      "description": "Customizable maps and geolocation services.",
+      "url": "https://docs.mapbox.com/api/",
+      "auth": "API Key"
+    },
+    {
+      "name": "OpenCage Geocoder",
+      "description": "Forward and reverse geocoding.",
+      "url": "https://opencagedata.com/api",
+      "auth": "API Key"
+    },
+    {
+      "name": "Position Stack",
+      "description": "Real-time global forward/reverse geocoding.",
+      "url": "https://positionstack.com/",
+      "auth": "API Key"
+    },
+    {
+      "name": "GeoJS",
+      "description": "Free IP Geolocation API.",
+      "url": "https://geojs.io/",
+      "auth": "No"
+    }
+  ],
+  "Education & Reference": [
+    {
+      "name": "Open Trivia DB",
+      "description": "Trivia questions for quizzes and games.",
+      "url": "https://opentdb.com/api_config.php",
+      "auth": "No"
+    },
+    {
+      "name": "Numbers API",
+      "description": "Trivia about numbers, math, dates.",
+      "url": "http://numbersapi.com/",
+      "auth": "No"
+    },
+    {
+      "name": "WordsAPI",
+      "description": "Definitions, synonyms, rhymes, and more for English words.",
+      "url": "https://www.wordsapi.com/",
+      "auth": "API Key"
+    },
+    {
+      "name": "Khan Academy API",
+      "description": "Educational content and videos.",
+      "url": "https://khanacademy.org/api",
+      "auth": "No"
+    }
+  ],
+  "Movies & TV": [
+    {
+      "name": "The Movie Database (TMDb)",
+      "description": "Movie, TV shows, actor info and images.",
+      "url": "https://developers.themoviedb.org/3",
+      "auth": "API Key"
+    },
+    {
+      "name": "OMDb API",
+      "description": "Movie information and posters.",
+      "url": "http://www.omdbapi.com/",
+      "auth": "API Key"
+    },
+    {
+      "name": "TVMaze",
+      "description": "TV shows and episodes data.",
+      "url": "https://www.tvmaze.com/api",
+      "auth": "No"
+    },
+    {
+      "name": "Trakt API",
+      "description": "Track movies and TV shows watched.",
+      "url": "https://trakt.docs.apiary.io/",
+      "auth": "OAuth"
+    }
+  ],
+  "Sports & Fitness": [
+    {
+      "name": "TheSportsDB",
+      "description": "Sports data including teams, players, events.",
+      "url": "https://www.thesportsdb.com/api.php",
+      "auth": "API Key"
+    },
+    {
+      "name": "Football-Data.org",
+      "description": "Football (soccer) data for leagues and matches.",
+      "url": "https://www.football-data.org/documentation/api",
+      "auth": "API Key"
+    },
+    {
+      "name": "Strava API",
+      "description": "Track athletic activities like running, cycling.",
+      "url": "https://developers.strava.com/docs/",
+      "auth": "OAuth"
+    },
+    {
+      "name": "Fitness Calculator API",
+      "description": "Calculate BMI, calories burned, etc.",
+      "url": "https://fitness-calculator.p.rapidapi.com",
+      "auth": "API Key"
+    }
+  ],
+  "Books & Literature": [
+    {
+      "name": "Google Books API",
+      "description": "Search books and retrieve book information.",
+      "url": "https://developers.google.com/books/docs/v1/using",
+      "auth": "API Key"
+    },
+    {
+      "name": "Open Library API",
+      "description": "Access book data and cover images.",
+      "url": "https://openlibrary.org/developers/api",
+      "auth": "No"
+    },
+    {
+      "name": "Goodreads API",
+      "description": "Book reviews, ratings, and recommendations.",
+      "url": "https://www.goodreads.com/api",
+      "auth": "API Key"
+    }
+  ],
+  "Food & Drink": [
+    {
+      "name": "Spoonacular",
+      "description": "Recipes, food products, nutrition data.",
+      "url": "https://spoonacular.com/food-api",
+      "auth": "API Key"
+    },
+    {
+      "name": "TheCocktailDB",
+      "description": "Cocktail recipes and ingredients.",
+      "url": "https://www.thecocktaildb.com/api.php",
+      "auth": "No"
+    },
+    {
+      "name": "TheMealDB",
+      "description": "Recipe search and meal ideas.",
+      "url": "https://www.themealdb.com/api.php",
+      "auth": "No"
+    }
+  ],
+  "Transportation & Travel": [
+    {
+      "name": "Amadeus Travel APIs",
+      "description": "Flight, hotel, and travel data.",
+      "url": "https://developers.amadeus.com/self-service/apis",
+      "auth": "API Key"
+    },
+    {
+      "name": "Skyscanner API",
+      "description": "Flight search and pricing.",
+      "url": "https://developers.skyscanner.net/docs",
+      "auth": "API Key"
+    },
+    {
+      "name": "Transport for London API",
+      "description": "Public transport data in London.",
+      "url": "https://api.tfl.gov.uk/",
+      "auth": "No"
+    }
+  ],
+  "Blockchain & NFTs": [
+    {
+      "name": "OpenSea API",
+      "description": "NFT marketplace data and listings.",
+      "url": "https://docs.opensea.io/reference/api-overview",
+      "auth": "API Key"
+    },
+    {
+      "name": "Alchemy API",
+      "description": "Blockchain data and node access.",
+      "url": "https://docs.alchemy.com/",
+      "auth": "API Key"
+    },
+    {
+      "name": "Etherscan API",
+      "description": "Ethereum blockchain explorer data.",
+      "url": "https://etherscan.io/apis",
+      "auth": "API Key"
+    }
+  ]
 }
