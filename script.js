@@ -1,8 +1,23 @@
-fetch("apis.json")
-  .then((response) => response.json())
-  .then((data) => {
+// Load both JSON files and merge categories
+Promise.all([
+  fetch("apis.json").then((res) => res.json()),
+  fetch("extra-apis.json").then((res) => res.json()) // your second file
+])
+  .then(([data1, data2]) => {
+    const merged = { categories: {} };
+
+    // Merge categories from both files
+    [data1, data2].forEach((data) => {
+      for (const [category, apis] of Object.entries(data.categories)) {
+        if (!merged.categories[category]) {
+          merged.categories[category] = [];
+        }
+        merged.categories[category].push(...apis);
+      }
+    });
+
     const container = document.getElementById("api-container");
-    const categories = data.categories;
+    const categories = merged.categories;
 
     for (const [category, apis] of Object.entries(categories)) {
       const section = document.createElement("div");
@@ -35,6 +50,6 @@ fetch("apis.json")
   })
   .catch((err) => {
     document.getElementById("api-container").innerHTML =
-      "<p>Failed to load APIs. Check your apis.json file.</p>";
+      "<p>Failed to load APIs. Check your JSON files.</p>";
     console.error(err);
   });
